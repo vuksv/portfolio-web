@@ -17,7 +17,8 @@ Notes:
 
 - Wrap a phrase in `*asterisks*` in `hero.headline` to set it in the accent color.
 - Set `"status"` to `null` in `site.json` to hide the availability chip.
-- A project card shows its index numeral over the dot grid until you give it an `image` (a path under `img/`). Add `href` to link it to a case study. `"ai": true` adds the single accent `ai-native` tag.
+- Project cards are impact panels, not screenshots: `stat` (`{"value": "10M+", "label": "monthly active users"}`, or `null` to show the index numeral) and `flow` (three short steps shown as `a → b → c`). An optional `image` (a path under `img/`) replaces the panel. Add `href` to link a card to a case study.
+- The name everywhere comes from `basics.name` in `resume.json`. Add `?name=plain` to the URL to preview it without diacritics. `"ai": true` adds the single accent `ai-native` tag.
 - Run `npm test` after editing to catch a broken JSON file or a missing field.
 
 ## Design tokens

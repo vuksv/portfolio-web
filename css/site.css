@@ -88,3 +88,19 @@ details.vk-xp-item[open] > summary h3 { color: var(--accent); }
 /* Let the availability chip wrap cleanly on narrow screens */
 .vk-status { height: auto; min-height: 30px; padding-top: var(--space-1); padding-bottom: var(--space-1); max-width: 100%; }
 .vk-status .vk-dot { flex: none; }
+
+/* Impact panel: replaces screenshots on project cards with a metric and the system's flow */
+.vk-media:has(.vk-impact) { aspect-ratio: auto; min-height: 260px; align-items: stretch; }
+.vk-impact { display: flex; flex-direction: column; justify-content: flex-end; gap: var(--space-6); width: 100%; }
+.vk-impact-idx { position: absolute; top: var(--space-6); left: var(--space-6); color: var(--ink-muted); }
+.vk-stat { display: flex; flex-direction: column; gap: var(--space-1); }
+.vk-stat-value { font-size: 88px; line-height: .9; font-weight: 600; letter-spacing: -3.5px; color: var(--accent); }
+.vk-flow { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); list-style: none; margin: 0; padding: 0; font-family: var(--font-mono); font-size: 13px; line-height: 20px; text-transform: lowercase; color: var(--ink); }
+.vk-flow li { display: inline-flex; align-items: center; gap: var(--space-2); white-space: nowrap; }
+.vk-flow-step { padding: var(--space-1) var(--space-3); border-radius: var(--radius-pill); background: var(--surface); border: 1px solid var(--hairline); }
+.vk-flow-sep { color: var(--ink-muted); }
+.vk-impact:has(.vk-impact-idx) { padding-top: var(--space-8); }
+@media (max-width: 720px) {
+  .vk-media:has(.vk-impact) { min-height: 220px; }
+  .vk-stat-value, .vk-media .vk-num { font-size: 64px; letter-spacing: -2.4px; }
+}

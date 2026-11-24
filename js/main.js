@@ -31,6 +31,17 @@
   }
 
   // ---------- render ----------
+  // Name comes from resume.basics.name. Preview without diacritics with ?name=plain (Svilarić -> Svilaric).
+  function applyName(resume) {
+    var name = resume.basics.name;
+    try {
+      if (new URLSearchParams(location.search).get('name') === 'plain') name = name.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    } catch (e) {}
+    resume.basics.name = name;
+    document.querySelectorAll('.vk-wordmark').forEach(function (el) { el.textContent = name; });
+    document.title = name + ' · ' + (resume.basics.label || '');
+  }
+
   function renderHero(site, resume) {
     if (site.status) {
       $('status').hidden = false;
@@ -48,9 +59,16 @@
   function renderProjects(projects) {
     $('projects').innerHTML = (projects || []).map(function (p, i) {
       var num = String(i + 1).padStart(2, '0');
+      // Impact panel: a headline metric (or the index numeral) over the system's flow. No screenshots needed.
+      var head = p.stat
+        ? '<div class="vk-stat"><span class="vk-stat-value">' + esc(p.stat.value) + '</span><span class="vk-meta">' + esc(p.stat.label) + '</span></div>'
+        : '<span class="vk-num" aria-hidden="true">' + num + '</span>';
+      var flow = (p.flow || []).length
+        ? '<ol class="vk-flow" aria-label="How it works">' + p.flow.map(function (f, j) { return '<li>' + (j ? '<span class="vk-flow-sep" aria-hidden="true">→</span>' : '') + '<span class="vk-flow-step">' + esc(f) + '</span></li>'; }).join('') + '</ol>'
+        : '';
       var media = p.image
         ? '<img src="' + esc(p.image) + '" alt="' + esc(p.imageAlt || p.title) + '" loading="lazy">'
-        : '<span class="vk-num" aria-hidden="true">' + num + '</span>';
+        : '<div class="vk-impact">' + (p.stat ? '<span class="vk-label vk-impact-idx">' + num + '</span>' : '') + head + flow + '</div>';
       var tags = (p.tags || []).map(function (t) { return '<span class="vk-tag">' + esc(t) + '</span>'; });
       if (p.ai) tags.push('<span class="vk-tag vk-tag-accent">ai-native</span>');
       var tag = p.href ? 'a' : 'article';
@@ -203,6 +221,7 @@
 
   Promise.all([getJSON('data/site.json'), getJSON('data/resume.json')]).then(function (res) {
     var site = res[0], resume = res[1];
+    applyName(resume);
     renderHero(site, resume);
     $('thesis').textContent = site.thesis || '';
     renderProjects(site.projects);
