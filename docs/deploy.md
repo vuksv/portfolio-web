@@ -6,7 +6,7 @@ GitHub signs in to Google with Workload Identity Federation, so no service accou
 
 ## One-time setup
 
-Run these once in Cloud Shell or anywhere `gcloud` is signed in as a project owner. Replace `PROJECT_ID`.
+Run these once in Cloud Shell or anywhere `gcloud` is signed in as a project owner (on Windows PowerShell, call `gcloud.cmd`). Done for `svilaric-ca` on 2026-11-24. Replace `PROJECT_ID`.
 
 ```sh
 PROJECT_ID=your-project-id
@@ -27,13 +27,13 @@ done
 gcloud iam service-accounts add-iam-policy-binding "$PROJECT_ID@appspot.gserviceaccount.com" \
   --project "$PROJECT_ID" --member "serviceAccount:$SA" --role roles/iam.serviceAccountUser
 
-# Trust GitHub Actions from this repository only
+# Trust GitHub Actions from this repository's master branch only
 gcloud iam workload-identity-pools create github --project "$PROJECT_ID" --location global --display-name "GitHub"
 gcloud iam workload-identity-pools providers create-oidc portfolio-web --project "$PROJECT_ID" \
   --location global --workload-identity-pool github \
   --issuer-uri "https://token.actions.githubusercontent.com" \
-  --attribute-mapping "google.subject=assertion.sub,attribute.repository=assertion.repository" \
-  --attribute-condition "assertion.repository == '$REPO'"
+  --attribute-mapping "google.subject=assertion.sub,attribute.repository=assertion.repository,attribute.ref=assertion.ref" \
+  --attribute-condition "assertion.repository == '$REPO' && assertion.ref == 'refs/heads/master'"
 gcloud iam service-accounts add-iam-policy-binding "$SA" --project "$PROJECT_ID" \
   --role roles/iam.workloadIdentityUser \
   --member "principalSet://iam.googleapis.com/projects/$PROJECT_NUMBER/locations/global/workloadIdentityPools/github/attribute.repository/$REPO"
