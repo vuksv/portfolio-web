@@ -1,0 +1,11 @@
+# Files App Engine doesn't need. node_modules is rebuilt from package-lock.json on deploy.
+.gcloudignore
+.git
+.gitignore
+.github/
+node_modules/
+design/
+docs/
+scripts/
+README.md
+LICENSE

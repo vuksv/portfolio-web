@@ -1,0 +1,151 @@
+{
+  "status": "Open to senior roles · Toronto / remote",
+  "hero": {
+    "headline": "Software that *thinks ahead*.",
+    "subline": "Senior backend engineer building payments infrastructure, identity and the AI-native workflows that make teams ship faster.",
+    "primary": {
+      "label": "See selected work",
+      "href": "#work"
+    },
+    "secondary": {
+      "label": "View résumé",
+      "href": "#experience"
+    }
+  },
+  "thesis": "Most software still runs on yesterday's assumptions. I build for the version where AI is a teammate, not a feature, and where the boring parts never break.",
+  "projects": [
+    {
+      "meta": "tims financial · credit card platform",
+      "title": "Credit card transaction workflow",
+      "summary": "The transaction processing path for the Tims Financial credit card, from backend architecture through frontend integration.",
+      "stat": null,
+      "flow": [
+        "authorize",
+        "post",
+        "settle"
+      ],
+      "tags": [
+        "payments",
+        "backend"
+      ],
+      "href": null
+    },
+    {
+      "meta": "rbi · internal developer tooling",
+      "title": "Architecture assistant on Bedrock",
+      "summary": "An LLM assistant built on Amazon Bedrock flows that answered engineers' questions about the team's existing AWS architecture.",
+      "stat": null,
+      "flow": [
+        "question",
+        "bedrock flow",
+        "aws architecture"
+      ],
+      "tags": [
+        "aws",
+        "llm"
+      ],
+      "ai": true,
+      "href": null
+    },
+    {
+      "meta": "tim hortons app · mobile payments",
+      "title": "Google Pay integration",
+      "summary": "Redesigned and rebuilt the Google Pay flow as a reusable component across the app.",
+      "stat": {
+        "value": "10M+",
+        "label": "monthly active users"
+      },
+      "flow": [
+        "tims app",
+        "google pay",
+        "card"
+      ],
+      "tags": [
+        "wallets",
+        "mobile"
+      ],
+      "href": null
+    },
+    {
+      "meta": "canadian tire × tim hortons · partnership",
+      "title": "Account linking and rewards",
+      "summary": "OIDC account linking and rewards earning across two loyalty programs, with 200,000 users linked in launch week.",
+      "stat": {
+        "value": "200K",
+        "label": "users linked in launch week"
+      },
+      "flow": [
+        "tim hortons",
+        "oidc",
+        "canadian tire"
+      ],
+      "tags": [
+        "identity",
+        "oidc"
+      ],
+      "href": null
+    },
+    {
+      "meta": "carfax · marketplace leads",
+      "title": "Facebook Marketplace chatbot",
+      "summary": "Processes over 1,000,000 listings daily, generating 10,000+ leads and an estimated $26M in added yearly revenue.",
+      "stat": {
+        "value": "$26M",
+        "label": "est. added yearly revenue"
+      },
+      "flow": [
+        "1M+ listings/day",
+        "chatbot",
+        "10K+ leads"
+      ],
+      "tags": [
+        "automation",
+        "serverless"
+      ],
+      "href": null
+    },
+    {
+      "meta": "side project · garmin instinct 2x",
+      "title": "Kite jump tracker",
+      "summary": "Jump height from a watch's FIT files, with an iPhone helper to review every session.",
+      "stat": null,
+      "flow": [
+        "watch fit file",
+        "jump height",
+        "iphone"
+      ],
+      "tags": [
+        "wearables"
+      ],
+      "ai": true,
+      "href": null
+    }
+  ],
+  "principles": [
+    {
+      "title": "Design the failure path first",
+      "body": "In payments the happy path is the easy part. Retries, reversals and reconciliation get designed before the demo does."
+    },
+    {
+      "title": "AI drafts, tests decide",
+      "body": "Agents are part of my daily loop for exploring, scaffolding and reviewing. Nothing merges on vibes; everything merges on evidence."
+    },
+    {
+      "title": "Ship the boring parts brilliantly",
+      "body": "Auth flows, idempotency keys, migrations. The unglamorous work is where reliability lives."
+    },
+    {
+      "title": "Leave the system clearer than you found it",
+      "body": "Every integration I touch should be easier for the next engineer to reuse, the way the Google Pay flow became a shared component."
+    },
+    {
+      "title": "Think in years, ship in days",
+      "body": "Pick the architecture that survives the next three launches, then deliver it in small pieces that each go live."
+    }
+  ],
+  "contact": {
+    "headline": "Let's build what's next.",
+    "body": "Hiring for a senior engineer who treats AI as a teammate and payments as a craft? I'd like to hear about it.",
+    "button": "Email me"
+  }
+}

@@ -1,0 +1,95 @@
+/* Vuk Svilaric — generated from design/tokens.json by scripts/build-tokens.js. Do not edit by hand. */
+:root {
+  --font-display: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --radius-xs: 4px;
+  --radius-md: 12px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+  --ease: cubic-bezier(.2,.7,.2,1);
+  color-scheme: light;
+  --paper: #f6f7f9;
+  --surface: #ffffff;
+  --surface-sunk: #eceff4;
+  --hairline: #dce1e9;
+  --border-strong: #7d8694;
+  --ink: #0d1117;
+  --ink-muted: #4a5361;
+  --ink-faint: #7d8694;
+  --accent: #1846d1;
+  --accent-strong: #1236a6;
+  --accent-tint: #e6ecff;
+  --accent-veil: #b9c7ef;
+  --on-accent: #ffffff;
+  --signal: #e0560a;
+  --signal-ink: #a84300;
+  --night: #0a1124;
+  --night-ink: #eef2ff;
+  --night-muted: #a7b4d4;
+  --glow-cobalt: #2b5cff;
+  --glow-teal: #12b5a0;
+  --focus: #1846d1;
+  --shadow-card: 0 1px 2px rgba(13,17,23,0.06), 0 16px 40px -20px rgba(13,17,23,0.22);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #0a0d13;
+    --surface: #11151d;
+    --surface-sunk: #181d28;
+    --hairline: #283040;
+    --border-strong: #6b7486;
+    --ink: #eceff4;
+    --ink-muted: #a3acbb;
+    --ink-faint: #79828f;
+    --accent: #7fa3ff;
+    --accent-strong: #a8c0ff;
+    --accent-tint: #152140;
+    --accent-veil: #2a3a64;
+    --on-accent: #0a0d13;
+    --signal: #ff8a3d;
+    --signal-ink: #ffad73;
+    --night: #05080f;
+    --night-ink: #eef2ff;
+    --night-muted: #a7b4d4;
+    --glow-cobalt: #2b5cff;
+    --glow-teal: #19c7ae;
+    --focus: #8fb0ff;
+    --shadow-card: 0 1px 0 rgba(255,255,255,0.04), 0 20px 48px -20px rgba(0,0,0,0.7);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #0a0d13;
+  --surface: #11151d;
+  --surface-sunk: #181d28;
+  --hairline: #283040;
+  --border-strong: #6b7486;
+  --ink: #eceff4;
+  --ink-muted: #a3acbb;
+  --ink-faint: #79828f;
+  --accent: #7fa3ff;
+  --accent-strong: #a8c0ff;
+  --accent-tint: #152140;
+  --accent-veil: #2a3a64;
+  --on-accent: #0a0d13;
+  --signal: #ff8a3d;
+  --signal-ink: #ffad73;
+  --night: #05080f;
+  --night-ink: #eef2ff;
+  --night-muted: #a7b4d4;
+  --glow-cobalt: #2b5cff;
+  --glow-teal: #19c7ae;
+  --focus: #8fb0ff;
+  --shadow-card: 0 1px 0 rgba(255,255,255,0.04), 0 20px 48px -20px rgba(0,0,0,0.7);
+}
