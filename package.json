@@ -1,7 +1,7 @@
 {
   "name": "portfolio-web",
   "version": "1.0.0",
-  "description": "Vuk Svilari\u0107's portfolio site",
+  "description": "Vuk Svilaric's portfolio site",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
