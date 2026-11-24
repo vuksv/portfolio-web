@@ -9,3 +9,5 @@ docs/
 scripts/
 README.md
 LICENSE
+# Short-lived credentials file written by google-github-actions/auth during deploy
+gha-creds-*.json
