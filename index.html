@@ -1,7 +1,16 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vuk Svilarić · Senior Backend Engineer</title>
+  <meta name="description" content="Vuk Svilarić, senior backend engineer in Toronto building payments infrastructure, identity and AI-native workflows.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="alternate" type="application/json" href="data/resume.json" title="Résumé (JSON Resume)">
+  <script>
+    // Apply a saved theme before first paint so there is no flash.
+    try { var t = localStorage.getItem('vk-theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VH1L0F3JV8"></script>
   <script>
@@ -10,245 +19,74 @@
     gtag('js', new Date());
     gtag('config', 'G-VH1L0F3JV8');
   </script>
-  <title>Vuk Svilaric</title>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- css -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,300,700,800" rel="stylesheet" media="screen">
-  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-  <link href="css/style.css" rel="stylesheet" media="screen">
-  <link href="color/default.css" rel="stylesheet" media="screen">
-  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/site.css">
+  <script defer src="js/main.js"></script>
 </head>
-
 <body>
+  <a class="vk-skip" href="#main">Skip to content</a>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-          <span class="sr-only">Toggle nav</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-
-        <!-- Logo text or image -->
-        <a class="navbar-brand" href="index.html">Vuk</a>
-
+  <div class="vk-nav-wrap" id="nav-wrap">
+    <nav class="vk-nav" id="nav" aria-label="Main">
+      <a class="vk-wordmark" href="#top">Vuk Svilarić</a>
+      <ul id="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#principles">Principles</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="vk-nav-end">
+        <button class="vk-toggle vk-menu" id="menu" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">≡</button>
+        <button class="vk-toggle" id="theme" type="button" aria-label="Switch to dark theme">◐</button>
+        <a class="vk-btn vk-btn-primary" href="#contact">Get in touch <span class="vk-arrow">→</span></a>
       </div>
-      <div class="navigation collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav">
-          <li class="current"><a href="#intro">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Resume</a></li>
-          <!--li><a href="#portfolio">Works</a></li-->
-          <!--li><a href="#team">Team</a></li-->
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
 
-  <!-- intro area -->
-  <section id="intro">
-    <div class="intro-container">
-      <div id="introCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+  <main id="main">
+    <header class="vk-hero vk-wrap" id="top">
+      <span class="vk-status" id="status" hidden><span class="vk-dot" aria-hidden="true"></span><span></span></span>
+      <h1 id="hero-headline">Vuk Svilarić</h1>
+      <p id="hero-subline"></p>
+      <div class="vk-row" id="hero-actions"></div>
+    </header>
 
-        <div class="carousel-inner" role="listbox">
+    <section class="vk-section vk-wrap" aria-labelledby="thesis-label">
+      <div class="vk-eyebrow vk-label" id="thesis-label"><span class="vk-idx">00</span><span>Thesis</span></div>
+      <p class="vk-reveal" id="thesis"></p>
+    </section>
 
-          <!-- Slide 1 -->
-          <div class="item active">
-            <div class="carousel-background"><img src="img/intro/1.jpg" alt=""></div>
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2 class="animated fadeInDown">Vuk Svilaric</h2>
-                <p class="animated fadeInUp">Software Engineer at RBI</p>
-                <a href="#about" class="btn-get-started animated fadeInUp">Read More</a>
-              </div>
-            </div>
-          </div>
-			
-          <!-- Slide 2 -->
-          <div class="item">
-            <div class="carousel-background"><img src="img/intro/2.jpg" alt=""></div>
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2 class="animated fadeInDown">Vuk Svilaric</h2>
-                <p class="animated fadeInUp">Former Software Engineer at Carfax</p>
-                <a href="#about" class="btn-get-started animated fadeInUp">Read More</a>
-              </div>
-            </div>
-          </div>
+    <section class="vk-section vk-wrap vk-fade" id="work" aria-labelledby="work-title">
+      <div class="vk-eyebrow vk-label"><span class="vk-idx">01</span><span>Selected work</span></div>
+      <h2 class="vk-h2" id="work-title">Selected work</h2>
+      <div class="vk-grid-2" id="projects"></div>
+    </section>
 
-          <!-- Slide 3 -->
-          <div class="item">
-            <div class="carousel-background"><img src="img/intro/3.jpg" alt=""></div>
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2 class="animated fadeInDown">Vuk Svilaric</span></h2>
-                <p class="animated fadeInUp">Former Software Engineer at Scotiabank</p>
-                <a href="#about" class="btn-get-started animated fadeInUp">Read More</a>
-              </div>
-            </div>
-          </div>
+    <section class="vk-section vk-wrap vk-fade" id="principles" aria-labelledby="principles-title">
+      <div class="vk-eyebrow vk-label"><span class="vk-idx">02</span><span>How I work</span></div>
+      <h2 class="vk-h2" id="principles-title">Principles</h2>
+      <ol class="vk-principles" id="principle-list"></ol>
+    </section>
 
-          <!-- Slide 4 -->
-          <div class="item">
-            <div class="carousel-background"><img src="img/intro/3.jpg" alt=""></div>
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2 class="animated fadeInDown">Vuk Svilaric</span></h2>
-                <p class="animated fadeInUp">Former Software Engineer at IBM</p>
-                <a href="#about" class="btn-get-started animated fadeInUp">Read More</a>
-              </div>
-            </div>
-          </div>
+    <section class="vk-section vk-wrap vk-fade" id="experience" aria-labelledby="experience-title">
+      <div class="vk-eyebrow vk-label"><span class="vk-idx">03</span><span>Experience</span></div>
+      <h2 class="vk-h2" id="experience-title">Experience</h2>
+      <div id="work-history"></div>
+      <div class="vk-cols" id="resume-extra"></div>
+      <noscript><p>The résumé is also available as <a class="vk-link" href="data/resume.json">JSON</a>.</p></noscript>
+    </section>
+  </main>
 
-        </div>
-
-        <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon fa fa-angle-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-
-        <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon fa fa-angle-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-
-      </div>
-    </div>
-  </section><!-- #intro -->
-
-  <!-- About -->
-  <section id="about" class="home-section bg-white">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-offset-2 col-md-8">
-          <div class="section-heading">
-            <h2>About Me</h2>
-            <div class="heading-line"></div>
-            <p>I'm a passionate Software Engineer who loves tackling challenging software projects.</p>
-          </div>
-        </div>
-      </div>
-      <div class="row wow fadeInUp">
-        <div class="col-md-6 about-img">
-          <img src="img/grad-suit.jpg" alt="">
-        </div>
-
-        <div class="col-md-6 content">
-          <h2>Graduated University of Toronto Computer Engineering</h2>
-          <h3>8 years of Experience</h3>
-          <p>
-            I'm a quick learner who has learned many different programming languages and technologies
-            to take on any project. I am able to quickly adapt learn how to acheive any software problem.
-          </p>
-        </div>
-      </div>
-    </div>
+  <section class="vk-finale vk-on-night" id="contact" aria-labelledby="contact-title">
+    <div class="vk-label vk-finale-label">04 — Contact</div>
+    <h2 id="contact-title">Let's build what's next.</h2>
+    <p id="contact-body"></p>
+    <a class="vk-btn vk-btn-ghost" id="contact-email" href="mailto:vuk@svilaric.com">Email me <span class="vk-arrow">→</span></a>
+    <footer class="vk-finale-foot">
+      <span id="foot-name">© Vuk Svilarić · Toronto</span>
+      <span id="foot-links"></span>
+    </footer>
   </section>
-
-  <!-- Parallax 1 -->
-  <section id="parallax1" class="home-section parallax" data-stellar-background-ratio="0.5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="color-light">
-            <h2 class="wow bounceInDown" data-wow-delay="0.5s">I'm looking for a full-time remote work opportunity</h2>
-            <p class="lead wow bounceInUp" data-wow-delay="1s">Take a look at my accomplishments</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="home-section bg-white">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-12">
-          <div class="section-heading">
-            <h2>Resume</h2>
-            <div class="heading-line"></div>
-            <iframe src="resume/vuk-resume.pdf" width="100%" height="1200px"></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- Bottom widget -->
-  <section id="contact" class="home-section bg-white">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-offset-2 col-md-8">
-                <div class="section-heading">
-                    <h2>Contact me</h2>
-                <div class="heading-line"></div>
-            </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-offset-4 col-md-4" center="true">
-          <div class="contact-widget wow bounceInUp">
-            <i class="fa fa-envelope fa-4x"></i>
-            <h2>Email</h2>
-            <h4>
-              <a href="mailto:vuk@svilaric.com">vuk@svilaric.com</a>
-            </h4>
-          </div>
-        </div>
-		<div class="col-md-offset-4 col-md-4" center="true">
-          <div class="contact-widget wow bounceInUp">
-            <i class="fa fa-linkedin fa-4x"></i>
-            <h2><a href="https://ca.linkedin.com/in/vuksvilaric">Linkedin</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <p>Copyright &copy; Vuk Svilaric</p>
-          <div class="credits">
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
-  <!-- js -->
-  <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/wow.min.js"></script>
-  <script src="js/jquery.scrollTo.min.js"></script>
-  <script src="js/jquery.nav.js"></script>
-  <script src="js/modernizr.custom.js"></script>
-  <script src="js/grid.js"></script>
-  <script src="js/stellar.js"></script>
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
-
-  <!-- Template Custom Javascript File -->
-  <script src="js/custom.js"></script>
-
 </body>
-
-  <!-- =======================================================
-    Theme Name: Alstar
-    Theme URL: https://bootstrapmade.com/alstar-free-parallax-bootstrap-template/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
 </html>
