@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400..700&display=swap");
 
-/* Vuk Svilarić portfolio components, copied from the design system (components/bundle.css). Every value comes from tokens.css. */
+/* Vuk Svilaric portfolio components, copied from the design system (components/bundle.css). Every value comes from tokens.css. */
 
 body { margin: 0; font-family: var(--font-display); background: var(--paper); color: var(--ink); -webkit-font-smoothing: antialiased; }
 .vk-pad { padding: var(--space-6); }
