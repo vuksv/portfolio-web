@@ -31,13 +31,9 @@
   }
 
   // ---------- render ----------
-  // Name comes from resume.basics.name. Preview without diacritics with ?name=plain (Svilarić -> Svilaric).
+  // The name everywhere comes from resume.basics.name.
   function applyName(resume) {
     var name = resume.basics.name;
-    try {
-      if (new URLSearchParams(location.search).get('name') === 'plain') name = name.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    } catch (e) {}
-    resume.basics.name = name;
     document.querySelectorAll('.vk-wordmark').forEach(function (el) { el.textContent = name; });
     document.title = name + ' · ' + (resume.basics.label || '');
   }
@@ -125,7 +121,7 @@
     }).join('');
     $('resume-extra').innerHTML = edu +
       '<div class="vk-skills"><h3 class="vk-sub">Skills</h3>' + skills +
-        '<div class="vk-resume-links"><a class="vk-btn vk-btn-text" href="data/resume.json">Résumé as JSON <span class="vk-arrow">↗</span></a></div>' +
+        '<div class="vk-resume-links"><a class="vk-btn vk-btn-ghost" href="resume.html">One-page résumé <span class="vk-arrow">→</span></a><a class="vk-btn vk-btn-text" href="resume/vuk-svilaric-resume.pdf">PDF <span class="vk-arrow">↗</span></a><a class="vk-btn vk-btn-text" href="data/resume.json">JSON <span class="vk-arrow">↗</span></a></div>' +
       '</div>';
   }
 

@@ -1,6 +1,6 @@
 # portfolio-web
 
-Vuk Svilarić's portfolio site, built on the "Vuk Svilarić" design system (cobalt accent, Instrument Sans + IBM Plex Mono, Daylight and Night themes).
+Vuk Svilaric's portfolio site, built on the "Vuk Svilaric" design system (cobalt accent, Instrument Sans + IBM Plex Mono, Daylight and Night themes).
 
 It is a static site with no build step: plain HTML, CSS and one script that renders the page from two JSON files. `index.js` serves it locally and on App Engine.
 
@@ -18,8 +18,19 @@ Notes:
 - Wrap a phrase in `*asterisks*` in `hero.headline` to set it in the accent color.
 - Set `"status"` to `null` in `site.json` to hide the availability chip.
 - Project cards are impact panels, not screenshots: `stat` (`{"value": "10M+", "label": "monthly active users"}`, or `null` to show the index numeral) and `flow` (three short steps shown as `a → b → c`). An optional `image` (a path under `img/`) replaces the panel. Add `href` to link a card to a case study.
-- The name everywhere comes from `basics.name` in `resume.json`. Add `?name=plain` to the URL to preview it without diacritics. `"ai": true` adds the single accent `ai-native` tag.
+- The name everywhere comes from `basics.name` in `resume.json`. `"ai": true` adds the single accent `ai-native` tag.
 - Run `npm test` after editing to catch a broken JSON file or a missing field.
+
+## Printable résumé
+
+`resume.html` renders the same `data/resume.json` as a one-page Letter résumé in the site's design language, shrinking the type (never below 7.6pt) until it fits. Add `"printHighlights": N` to a `work` entry to keep only its first N bullets on the printed page; the site still shows them all.
+
+After editing the résumé, regenerate the PDF the site links to:
+
+```sh
+npm i -D playwright && npx playwright install chromium   # once
+npm run resume:pdf                                        # writes resume/vuk-svilaric-resume.pdf
+```
 
 ## Design tokens
 

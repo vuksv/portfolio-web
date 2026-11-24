@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "tokens": "node scripts/build-tokens.js",
-    "test": "node scripts/check-content.js"
+    "test": "node scripts/check-content.js",
+    "resume:pdf": "node scripts/build-resume-pdf.js"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
-    "name": "Vuk Svilarić",
+    "name": "Vuk Svilaric",
     "label": "Senior Backend Engineer",
     "email": "vuk@svilaric.com",
     "url": "https://vuk.svilaric.com",
@@ -47,7 +47,8 @@
         "Integrated the in-house Leads API with third-party OEM and dealer lead tracking systems to streamline lead management.",
         "Engineered a Facebook Marketplace chatbot that processes over 1,000,000 Carfax listings daily, generating 10,000+ leads and an estimated $26 million in additional yearly revenue.",
         "Maintained high service availability with a multi-region disaster recovery failover solution and full-suite integration testing."
-      ]
+      ],
+      "printHighlights": 3
     },
     {
       "name": "Scotiabank",
@@ -59,7 +60,8 @@
         "Implemented custom cryptographic security with JWT, JWS, JWE and mutual TLS.",
         "Wrote performance-critical code using multi-process Node.js clustering.",
         "Developed internet-facing API solutions using Apigee Edge policies and custom Java callouts."
-      ]
+      ],
+      "printHighlights": 2
     },
     {
       "name": "IBM",
