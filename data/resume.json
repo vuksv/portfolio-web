@@ -6,10 +6,22 @@
     "email": "vuk@svilaric.com",
     "url": "https://vuk.svilaric.com",
     "summary": "Senior backend engineer in Toronto building payments infrastructure, identity and AI-native workflows.",
-    "location": { "city": "Toronto", "region": "ON", "countryCode": "CA" },
+    "location": {
+      "city": "Toronto",
+      "region": "ON",
+      "countryCode": "CA"
+    },
     "profiles": [
-      { "network": "GitHub", "username": "vuksv", "url": "https://github.com/vuksv" },
-      { "network": "LinkedIn", "username": "vuksvilaric", "url": "https://ca.linkedin.com/in/vuksvilaric" }
+      {
+        "network": "GitHub",
+        "username": "vuksv",
+        "url": "https://github.com/vuksv"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "vuksvilaric",
+        "url": "https://ca.linkedin.com/in/vuksvilaric"
+      }
     ]
   },
   "work": [
@@ -51,27 +63,93 @@
     },
     {
       "name": "IBM",
-      "position": "Software Engineer Intern",
+      "position": "Software Engineer Intern, WebSphere Application Server",
       "startDate": "2016-05",
       "endDate": "2017-08",
       "highlights": [
-        "Worked directly with the OpenAPI Spec founders (SmartBear) on the Java EE openapi-3.0 feature, which exposes OpenAPI 3.0 and Swagger 2.0 docs by scanning annotations in JAX-RS RESTful web applications."
+        "Built new features and provided support for WebSphere Application Server (WAS), used by banks around the world across on-prem, cloud and lightweight Liberty deployments.",
+        "Worked directly with the OpenAPI Spec founders (SmartBear) on the Java EE openapi-3.0 feature, which exposes OpenAPI 3.0 and Swagger 2.0 docs by scanning annotations in JAX-RS RESTful web applications.",
+        "Owned the build system of 50+ virtual machines for the entire XML Technologies component of WAS."
       ]
     }
   ],
   "education": [
     {
       "institution": "University of Toronto",
+      "url": "https://www.utoronto.ca",
       "area": "Computer Engineering, focus in Software Engineering",
       "studyType": "Bachelor of Applied Science",
       "endDate": "2018-05"
     }
   ],
   "skills": [
-    { "name": "Languages", "keywords": ["Node.js", "TypeScript", "React Native", "Python", "Kotlin", "JavaScript", "HTML", "CSS", "C/C++", "Bash", "SQL"] },
-    { "name": "AI & LLM tooling", "keywords": ["Claude Code", "Cursor", "ChatGPT", "Amazon Bedrock"] },
-    { "name": "Cloud & infrastructure", "keywords": ["AWS", "Serverless", "Terraform", "Docker", "Kubernetes", "GCP", "Azure", "PCF", "Jenkins", "CI/CD"] },
-    { "name": "Backend & data", "keywords": ["GraphQL", "REST", "Microservices", "Spring Boot", "Ruby on Rails", "RabbitMQ", "MongoDB", "Elasticsearch", "Apigee Edge"] },
-    { "name": "Testing & practices", "keywords": ["JUnit", "Spock", "Mocha", "TDD", "Git", "Maven", "Gradle", "Agile", "Scrum"] }
+    {
+      "name": "Languages",
+      "keywords": [
+        "Node.js",
+        "TypeScript",
+        "React Native",
+        "Python",
+        "Kotlin",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "C/C++",
+        "Bash",
+        "SQL"
+      ]
+    },
+    {
+      "name": "AI & LLM tooling",
+      "keywords": [
+        "Claude Code",
+        "Cursor",
+        "ChatGPT",
+        "Amazon Bedrock"
+      ]
+    },
+    {
+      "name": "Cloud & infrastructure",
+      "keywords": [
+        "AWS",
+        "Serverless",
+        "Terraform",
+        "Docker",
+        "Kubernetes",
+        "GCP",
+        "Azure",
+        "PCF",
+        "Jenkins",
+        "CI/CD"
+      ]
+    },
+    {
+      "name": "Backend & data",
+      "keywords": [
+        "GraphQL",
+        "REST",
+        "Microservices",
+        "Spring Boot",
+        "Ruby on Rails",
+        "RabbitMQ",
+        "MongoDB",
+        "Elasticsearch",
+        "Apigee Edge"
+      ]
+    },
+    {
+      "name": "Testing & practices",
+      "keywords": [
+        "JUnit",
+        "Spock",
+        "Mocha",
+        "TDD",
+        "Git",
+        "Maven",
+        "Gradle",
+        "Agile",
+        "Scrum"
+      ]
+    }
   ]
 }

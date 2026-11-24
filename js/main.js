@@ -108,13 +108,23 @@
       return '<div class="vk-skill"><span class="vk-label">' + esc(s.name) + '</span>' +
         '<div class="vk-tags">' + (s.keywords || []).map(function (k) { return '<span class="vk-tag">' + esc(k) + '</span>'; }).join('') + '</div></div>';
     }).join('');
+    // Education gets its own row under the work history: secondary to it, but easy to spot.
     var edu = (resume.education || []).map(function (e) {
-      return '<div class="vk-edu"><h4>' + esc(e.institution) + '</h4><p>' + esc(e.studyType) + ', ' + esc(e.area) + '</p>' +
-        '<div class="vk-meta">' + esc(fmtDate(e.endDate)) + '</div></div>';
+      var courses = (e.courses || []).map(function (c) { return '<span class="vk-tag">' + esc(c) + '</span>'; }).join('');
+      var city = e.location || 'toronto';
+      return '<div class="vk-edu">' +
+        '<span class="vk-label">Education</span>' +
+        '<div>' +
+          '<h3>' + (e.url ? '<a class="vk-link" href="' + esc(e.url) + '" rel="noopener">' + esc(e.institution) + '</a>' : esc(e.institution)) + '</h3>' +
+          '<p>' + esc(e.studyType) + ' · ' + esc(e.area) + '</p>' +
+          (e.summary ? '<p>' + esc(e.summary) + '</p>' : '') +
+          '<div class="vk-meta">class of ' + esc(year(e.endDate)) + ' · ' + esc(city) + '</div>' +
+          (courses ? '<div class="vk-tags vk-edu-courses">' + courses + '</div>' : '') +
+        '</div>' +
+      '</div>';
     }).join('');
-    $('resume-extra').innerHTML =
-      '<div><h3 class="vk-sub">Skills</h3>' + skills + '</div>' +
-      '<div><h3 class="vk-sub">Education</h3>' + edu +
+    $('resume-extra').innerHTML = edu +
+      '<div class="vk-skills"><h3 class="vk-sub">Skills</h3>' + skills +
         '<div class="vk-resume-links"><a class="vk-btn vk-btn-text" href="data/resume.json">Résumé as JSON <span class="vk-arrow">↗</span></a></div>' +
       '</div>';
   }
