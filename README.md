@@ -30,3 +30,7 @@ Notes:
 npm install
 npm start   # http://localhost:8080
 ```
+
+## Deploying
+
+Pushes to `master` deploy to App Engine through GitHub Actions. One-time Google Cloud setup: [docs/deploy.md](docs/deploy.md).

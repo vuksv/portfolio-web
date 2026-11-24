@@ -1,0 +1,53 @@
+name: Deploy
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Validate content files
+        run: npm test
+
+  deploy:
+    # Only master (or a manual run) publishes; pull requests just run the checks.
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    needs: check
+    runs-on: ubuntu-latest
+    environment: production
+    permissions:
+      contents: read
+      id-token: write # lets GitHub prove its identity to Google (no JSON key stored)
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
+
+      - name: Deploy to App Engine
+        id: deploy
+        uses: google-github-actions/deploy-appengine@v2
+        with:
+          project_id: ${{ vars.GCP_PROJECT_ID }}
+          deliverables: app.yaml
+          promote: true
+
+      - name: Smoke test
+        run: curl --fail --silent --show-error --retry 5 --retry-delay 5 "${{ steps.deploy.outputs.version_url }}/data/resume.json" > /dev/null
